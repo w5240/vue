@@ -1,0 +1,163 @@
+@charset "UTF-8";
+@import "./variables";
+
+// 单行文本溢出时使用"..."结尾
+@mixin ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// clear fix for float
+@mixin clearfix($direction: both) {
+    &:after{
+        display: table;
+        clear: $direction;
+        content: '';
+    }
+
+}
+
+// calc
+@mixin calc($prop, $value) {
+    #{$prop}: -webkit-calc(#{$value});
+    #{$prop}: calc(#{$value});
+}
+
+//背景图片
+@mixin background(
+    $url:"",
+    $size:auto auto,
+    $color:transparent
+) {
+    background-color: $color;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $size;
+}
+
+//按钮
+@mixin button(
+    $width:60px,
+    $height:30px,
+    $bgcolor: white,
+    $font-color: $content,
+    $font-size: 14px,
+    $radius: 0px,
+    $border: false,
+    $bdcolor: $border-color
+) {
+    height: $height;
+    min-width: $width;
+    display: inline-block;
+    background-color: $bgcolor;
+    color: $font-color;
+    font-size: $font-size;
+    border-radius: $radius;
+    cursor: pointer;
+    padding: 0 8px;
+    text-align: center;
+    box-sizing: border-box;
+
+    &[disabled]{
+        cursor: default !important;
+    }
+
+    @if $border{
+        border: 1px solid $bdcolor;
+        line-height: $height - 2px;
+    } @else{
+        border: 0;
+        line-height: $height;
+    }
+}
+
+/*叉号(默认)和加号小图标*/
+@mixin close(
+    $width: 14px,
+    $circle-bg: $theme,
+    $line-bg: #fff,
+    $rotate: 45deg
+) {
+    position: relative;
+    top: 50%;
+    display: inline-block;
+    height: $width;
+    width: $width;
+    margin-top: -0.5 * $width;
+    border-radius: 50%;
+    background: $circle-bg;
+    transition: transform .4s ease;
+
+    &:hover{
+        transform: rotateZ(180deg);
+    }
+
+    &:before{
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: ($width - 2px) / 2;
+        display: block;
+        width: 2px;
+        height: $width - 4px;
+        background: $line-bg;
+        border-radius: 1px;
+        transform: rotateZ($rotate);
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: ($width - 2px) / 2;
+        display: block;
+        height: 2px;
+        width: $width - 4px;
+        background: $line-bg;
+        border-radius: 1px;
+        transform: rotateZ($rotate);
+    }
+}
+
+/*叹号小图标*/
+@mixin warn(
+    $width: 14px,
+    $circle-bg: $theme,
+    $line-bg: #fff
+) {
+    position: relative;
+    top: 50%;
+    display: inline-block;
+    height: $width;
+    width: $width;
+    margin-top: -0.5 * $width;
+    border-radius: 50%;
+    background: $circle-bg;
+
+    &:before{
+        content: '';
+        position: absolute;
+        top: (0.5 * $width - 3px) / 2;
+        left: 50%;
+        display: block;
+        width: 2px;
+        height: 50%;
+        margin-left: -1px;
+        background: $line-bg;
+    }
+
+    &:after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: (0.5 * $width - 3px) / 2;
+        display: block;
+        width: 2px;
+        height: 2px;
+        margin-left: -1px;
+        background: $line-bg;
+    }
+}
+

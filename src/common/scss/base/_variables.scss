@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/**
+ * 字体
+ */
+$font: Microsoft Yahei, "Hiragino Sans GB", helvetica, verdana, sans-serif;
+$icon-font: 'iconfont';
+
+/**
+ * 布局
+ */
+$header-height: 60px;
+$menu-width: 190px;
+$menu-width-icon: 50px;
+
+/**
+ * 颜色
+ */
+$green: #0cc2a9;
+$bgc:#424242;
+$selBgc:#323232;
+$gray:#999;
+$light-purple: #d7d5e7;
+
+
+
+/*层级*/
+$index-header: 99;
+$index-menu: 6;
+$index-mask: 9;
+$index-popup: 10;
