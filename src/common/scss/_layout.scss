@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/**
+ * 内容区布局样式
+ */
+.mainWrapper{
+    min-height: 100vh;
+    background: $main-bg;
+    transition: all .2s ease;
+}
+
+.group-choose{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: $index-popup;
+    width: 30%;
+    height: 100vh;
+    padding: $header-height + 4px 15px 15px;
+    background: #fff;
+    overflow: auto;
+    .tools-list{
+        border-bottom-color: #fff;
+        .title-info{
+            float: left;
+            line-height: 30px;
+        }
+        .tools-search{
+            margin-right: 0;
+        }
+    }
+    .choose-all{
+        height: 30px;
+        line-height: 30px;
+    }
+    .group-list{
+        margin: 10px 0;
+        height: 360px;
+        li{
+            height: 30px;
+            line-height: 30px;
+            @include clearfix();
+            label{
+                float: left;
+                width: 80%;
+                span{
+                    width: 100%;
+                    @include ellipsis();
+                }
+            }
+            p{
+                float: left;
+                width: 20%;
+                padding-right: 10px;
+                text-align: right;
+            }
+        }
+    }
+}
