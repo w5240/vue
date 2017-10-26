@@ -2,25 +2,28 @@
   <div class="app">
     <div class="navBar">
       <ul class="">
-        <li class="sel">1</li>
-        <li>{{userCount}}</li>
-        <li>3</li>
+        <li>Eddy wang</li>
+        <router-link :to="{name:'curVit'}" tag="li">简介</router-link>
+        <router-link :to="{name:'production'}" tag="li">项目</router-link>
+        <router-link :to="{name:'other'}" tag="li">other</router-link>
       </ul>
     </div>
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script type="text/babel">
   export default {
-    data() {
-      return {
-        userCount: '33',
+    name: 'app',
+    data(){
+      return{
 
       }
     },
-    name: 'app'
+    mounted (){},
+    methods: {
+
+    }
   }
 </script>
 
@@ -38,14 +41,28 @@
   .navBar{
     width: 100%;
     height:$header-height;
-    background-color: rgba(0,0,0,0.8);
+    background-color: $bgc;
+    border-bottom:5px solid $green;
     ul {
+      height: 100%;
       li {
         display: block;
+        box-sizing: border-box;
+        border-left:1px solid black;
+        border-right:1px solid black;
+        line-height:$header-height;
         height: 100%;
         width: 120px;
         float: left;
-        background-color: gray;
+        color:$gray;
+        &.router-link-exact-active{
+          color:$green;
+          background-color: $selBgc;
+        }
+        &:first-child{
+          color:white;
+          background-color: $green;
+        }
       }
     }
   }
