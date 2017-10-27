@@ -13,36 +13,37 @@ import lee from '../components/production/lee/lee.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'viate',
-      component: viate,
-      meta: {name: '简历', auth: true},
-    },
-    {
-      path: '/production',
-      name: 'production',
-      component: production,
-      meta: {name: '产品', auth: true},
-      children:[
-        {
-          path:'/production/css3D',
-          name:'css3D',
-          component:css3D
-        },
-        {
-          path:'/production/lee',
-          name:'lee',
-          component:lee
-        },
-      ]
-    },
-    {
-      path: '/other',
-      name: 'other',
-      component: other
-    }
-  ]
+   mode: 'history',
+   routes: [
+      {
+         path: '/',
+         name: 'viate',
+         component: viate,
+         meta: {name: '简历', auth: true},
+      },
+      {
+         path: '/production',
+         name: 'production',
+         component: production,
+         meta: {name: '产品', auth: true},
+         redirect:'/production/css3D',
+         children:[
+            {
+               path:'/production/css3D',
+               name:'css3D',
+               component:css3D
+            },
+            {
+               path:'/production/lee',
+               name:'lee',
+               component:lee
+            },
+         ]
+      },
+      {
+         path: '/other',
+         name: 'other',
+         component: other
+      }
+   ]
 })
