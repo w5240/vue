@@ -4,6 +4,12 @@ import viate from '../components/vitae/vitae.vue'
 import production from '../components/production/production.vue'
 import other from '../components/other/other.vue'
 
+//production
+import css3D from '../components/production/css3D/css3D.vue'
+import lee from '../components/production/lee/lee.vue'
+
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -12,12 +18,26 @@ export default new Router({
     {
       path: '/',
       name: 'viate',
-      component: viate
+      component: viate,
+      meta: {name: '简历', auth: true},
     },
     {
       path: '/production',
       name: 'production',
-      component: production
+      component: production,
+      meta: {name: '产品', auth: true},
+      children:[
+        {
+          path:'/production/css3D',
+          name:'css3D',
+          component:css3D
+        },
+        {
+          path:'/production/lee',
+          name:'lee',
+          component:lee
+        },
+      ]
     },
     {
       path: '/other',

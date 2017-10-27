@@ -7,11 +7,12 @@
 @import "base/variables";
 @import "base/mixin";
 @import "base/normalize";
+@import 'base/font';
 
 /**
  * 页面各元素
  */
-@import "common/tool";
+//@import "common/tool";
 
 /**
  * 业务相关
@@ -19,6 +20,6 @@
 //@import "vue";
 
 // vue共用, transitions
-@import "layout";
+//@import "layout";
 
 

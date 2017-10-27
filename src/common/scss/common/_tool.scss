@@ -165,7 +165,7 @@
         width: 4px;
         height: 14px;
         margin-top: -7px;
-        background: $theme;
+        //background: $theme;
     }
 }
 
@@ -185,7 +185,7 @@
             + span{
 
                 &:before{
-                    border-color: $theme;
+                    //border-color: $theme;
                 }
 
                 &:after{
@@ -198,7 +198,7 @@
                     height: 6px;
                     margin-top: -3px;
                     border-radius: 50%;
-                    background: $theme;
+                    //background: $theme;
                 }
             }
         }
@@ -206,12 +206,12 @@
         &:disabled{
 
             + span:before{
-                border-color: $border-color;
-                background: $main-bg;
+                //border-color: $border-color;
+                //background: $main-bg;
             }
 
             &:checked + span:after{
-                background: $border-color;
+                //background: $border-color;
             }
         }
     }
@@ -231,7 +231,7 @@
             height: 14px;
             margin-top: -7px;
             box-sizing: border-box;
-            border: 1px solid $border-color;
+            //border: 1px solid $border-color;
             border-radius: 50%;
         }
     }
@@ -252,7 +252,7 @@
             + span{
 
                 &:before{
-                    border-color: $theme;
+                    //border-color: $theme;
                 }
 
                 &:after{

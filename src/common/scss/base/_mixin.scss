@@ -11,9 +11,11 @@
 // clear fix for float
 @mixin clearfix($direction: both) {
     &:after{
-        display: table;
+        display: block;
         clear: $direction;
         content: '';
+        height:0;
+        visibility: hidden;
     }
 
 }
