@@ -3,7 +3,7 @@
     <div class="navBar">
       <ul class="">
         <li>Eddy wang</li>
-        <router-link :to="{name:'curVit'}" tag="li">简介</router-link>
+        <router-link :to="{name:'viate'}" tag="li">简介</router-link>
         <router-link :to="{name:'production'}" tag="li">项目</router-link>
         <router-link :to="{name:'other'}" tag="li">other</router-link>
       </ul>

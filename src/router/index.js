@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import curVit from '../components/curriculumVitæ/curVit.vue'
+import viate from '../components/vitae/vitae.vue'
 import production from '../components/production/production.vue'
 import other from '../components/other/other.vue'
 
@@ -11,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'curVit',
-      component: curVit
+      name: 'viate',
+      component: viate
     },
     {
       path: '/production',
