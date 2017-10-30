@@ -21,7 +21,13 @@
 
          }
       },
-      mounted (){},
+      beforeCreate(){
+        console.log(this.$router)
+//        this.$router.push({name:'viate'})
+      },
+      mounted (){
+
+      },
       methods: {
 
       }
@@ -55,7 +61,7 @@
                width: 120px;
                float: left;
                color:$gray;
-               &.router-link-exact-active{
+               &.router-link-active{
                   color:$green;
                   background-color: $selBgc;
                }

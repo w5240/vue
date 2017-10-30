@@ -16,7 +16,7 @@ export default new Router({
    mode: 'history',
    routes: [
       {
-         path: '/',
+         path: '/viate',
          name: 'viate',
          component: viate,
          meta: {name: '简历', auth: true},

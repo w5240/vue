@@ -3,9 +3,7 @@
       <div :class="change?'spread sidebar':'sidebar'">
          <ul>
             <li ><i @click="change=!change" class="icon-font icon-category" style="color:#999;font-size:24px"></i></li>
-            <router-link :to="{name:'css3D'}" tag="li"><div class="bgc"><i class="icon-font icon-jifen"></i><p v-if="change">css 3D</p></div></router-link>
-            <router-link :to="{name:'lee'}" tag="li"><div class="bgc"><i class="icon-font icon-comments"></i><p v-if="change">小傻狗</p></div></router-link>
-
+            <router-link v-for="pro in productions" :to="{name:pro.routerName}" tag="li"><div class="bgc"><i :class="'icon-font '+ pro.iconfont"></i><p v-if="change">{{pro.name}}</p></div></router-link>
          </ul>
 
       </div>
@@ -19,6 +17,16 @@
       data(){
          return{
             change:false,
+            productions:[{
+               name:'css 3D',
+               routerName:'css3D',
+               iconfont:'icon-jifen'
+            },{
+                  name:'小傻狗',
+                  routerName:'lee',
+                  iconfont:'icon-comments'
+            }
+            ],
          }
       },
       mounted (){},
