@@ -56,7 +56,9 @@
                padding-top: 5px;
                border-bottom: 1px solid $selBgc;
                cursor:pointer;
-
+                  &:first-child{
+                     cursor:default;
+                  }
                .bgc{
                   height:40px;
                   width:90%;
