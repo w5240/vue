@@ -22,9 +22,13 @@
                routerName:'css3D',
                iconfont:'icon-jifen'
             },{
-                  name:'小傻狗',
-                  routerName:'lee',
-                  iconfont:'icon-comments'
+               name:'lee dog',
+               routerName:'lee',
+               iconfont:'icon-comments'
+            },{
+               name:'heml',
+               routerName:'heml',
+               iconfont:'icon-emailfilling'
             }
             ],
          }

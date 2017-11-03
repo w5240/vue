@@ -7,6 +7,7 @@ import other from '../components/other/other.vue'
 //production
 import css3D from '../components/production/css3D/css3D.vue'
 import lee from '../components/production/lee/lee.vue'
+import heml from '../components/production/heml/heml.vue'
 
 
 
@@ -37,6 +38,11 @@ export default new Router({
                path:'/production/lee',
                name:'lee',
                component:lee
+            },
+            {
+               path:'/production/heml',
+               name:'heml',
+               component:heml
             },
          ]
       },
