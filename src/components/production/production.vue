@@ -3,7 +3,7 @@
       <div :class="change?'spread sidebar':'sidebar'">
          <ul>
             <li ><i @click="change=!change" class="icon-font icon-category" style="color:#999;font-size:24px"></i></li>
-            <router-link v-for="pro in productions" :to="{name:pro.routerName}" tag="li"><div class="bgc"><i :class="'icon-font '+ pro.iconfont"></i><p v-if="change">{{pro.name}}</p></div></router-link>
+            <router-link v-for="(pro,index) in productions" :key="index" :to="{name:pro.routerName}" tag="li"><div class="bgc"><i :class="'icon-font '+ pro.iconfont"></i><p v-if="change">{{pro.name}}</p></div></router-link>
          </ul>
 
       </div>
@@ -29,6 +29,10 @@
                name:'heml',
                routerName:'heml',
                iconfont:'icon-emailfilling'
+            },{
+               name:'face',
+               routerName:'face',
+               iconfont:'icon-jifen',
             }
             ],
          }
@@ -44,9 +48,9 @@
    @import '../../common/scss/index.scss';
    .production {
       height:calc(100% - 60px);
+      display: flex;
       .sidebar {
          height:100%;
-         float: left;
          ul {
             height: 100%;
             width: 50px;
@@ -60,9 +64,9 @@
                padding-top: 5px;
                border-bottom: 1px solid $selBgc;
                cursor:pointer;
-                  &:first-child{
-                     cursor:default;
-                  }
+               &:first-child{
+                  cursor:default;
+               }
                .bgc{
                   height:40px;
                   width:90%;
@@ -106,8 +110,10 @@
          }
       }
       .proContent{
-         float: left;
+         flex:1;
          height:100%;
+         width:calc(100% - 50px);
+         overflow-y: auto;
       }
    }
 
